@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kBackgroundColor"
+    android:orientation="vertical"
+    tools:context=".Dokter">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="@null"
+                    android:padding="28dp"
+                    android:src="@drawable/menu" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right|end"
+                    android:background="@null"
+                    android:padding="22dp"
+                    android:src="@drawable/profile" />
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginLeft="28dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/varelaround"
+                    android:gravity="left"
+                    android:text="Find Your Desire \nDoctor"
+                    android:textColor="@color/kTitleColor"
+                    android:textSize="32dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginLeft="12dp"
+                >
+
+
+                <EditText
+                    android:id="@+id/searchdani"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/searchbackground"
+                    android:fontFamily="@font/varelaround"
+                    android:hint="Search for Specialist"
+                    android:inputType="text|textNoSuggestions"
+                    android:paddingLeft="32dp" />
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="280dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="34dp"
+                    android:background="@drawable/imagesearch"
+                    android:src="@drawable/search" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="-16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="74dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="28dp"
+                    android:fontFamily="@font/varelaround"
+                    android:text="Specialist"
+                    android:textColor="@color/kTitleColor"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:scrollbars="none"
+                    tools:ignore="UselessParent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_marginRight="2dp">
+
+                            <androidx.cardview.widget.CardView
+
+                                android:layout_width="110dp"
+                                android:layout_height="130dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/kWhiteColor"
+                                app:cardCornerRadius="20dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:layout_marginLeft="26dp"
+                                    android:layout_marginBottom="12dp"
+                                    android:fontFamily="@font/varelaround"
+                                    android:text="Dental Surgeon"
+                                    android:textColor="@color/kTitleColor" />
+                            </androidx.cardview.widget.CardView>
+
+
+                            <ImageButton
+                                android:layout_width="84dp"
+                                android:layout_height="84dp"
+                                android:layout_marginLeft="62dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/categoryblue"
+                                android:elevation="2dp"
+                                android:src="@drawable/dental_surgeon" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="150dp"
+                            android:layout_marginRight="2dp">
+
+                            <androidx.cardview.widget.CardView
+
+                                android:layout_width="110dp"
+                                android:layout_height="130dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/kWhiteColor"
+                                app:cardCornerRadius="20dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:layout_marginLeft="26dp"
+                                    android:layout_marginBottom="12dp"
+                                    android:fontFamily="@font/varelaround"
+                                    android:text="Heart Surgeon"
+                                    android:textColor="@color/kTitleColor" />
+                            </androidx.cardview.widget.CardView>
+
+
+                            <ImageButton
+                                android:layout_width="84dp"
+                                android:layout_height="84dp"
+                                android:layout_marginLeft="62dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/categoryyellow"
+                                android:elevation="2dp"
+                                android:src="@drawable/heart_surgeon" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="150dp"
+                            android:layout_marginRight="12dp">
+
+                            <androidx.cardview.widget.CardView
+
+                                android:layout_width="110dp"
+                                android:layout_height="130dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/kWhiteColor"
+                                app:cardCornerRadius="20dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:layout_marginLeft="26dp"
+                                    android:layout_marginBottom="12dp"
+                                    android:fontFamily="@font/varelaround"
+                                    android:text="Eye Specialist"
+                                    android:textColor="@color/kTitleColor" />
+                            </androidx.cardview.widget.CardView>
+
+
+                            <ImageButton
+                                android:layout_width="84dp"
+                                android:layout_height="84dp"
+                                android:layout_marginLeft="62dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/categoryorange"
+                                android:elevation="2dp"
+                                android:src="@drawable/eye_specialist" />
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+
+                </HorizontalScrollView>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Top Doctors"
+                    android:textColor="@color/kTitleColor"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_gravity="center"
+                    android:id="@+id/list_doctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="12dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

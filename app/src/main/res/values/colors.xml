@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff4B7FFB</color>
+    <color name="colorPrimaryDark">#ffC0C0C0</color>
+    <color name="colorAccent">#ffC0C0C0</color>
+
+    <color name="kBackgroundColor">#ffF9F9F9</color>
+    <color name="kWhiteColor">#ffffff</color>
+    <color name="kOrangeColor">#ffEF716B</color>
+    <color name="kBlueColor">#ff4B7FFB</color>
+    <color name="kYellowColor">#ffFFB167</color>
+    <color name="kTitleColor">#ff1E1C61</color>
+    <color name="kSearchBackgroundColor">#ffF2F2F2</color>
+    <color name="kSearchTextColor">#ffC0C0C0</color>
+    <color name="kCategoryTextColor">#ff292685</color>
+    <color name="kDoctor">#264B7FFB</color>
+
+    <color name="kDoctorCall">#264B7FFB</color>
+    <color name="kDoctorChat">#26FFB167</color>
+    <color name="kDoctorVideo">#26EF716B</color>
+
+</resources>

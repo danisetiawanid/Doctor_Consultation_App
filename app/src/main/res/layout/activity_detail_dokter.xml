@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/kWhiteColor"
+    android:orientation="vertical"
+    android:weightSum="4"
+    tools:context=".DetailDokter">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/detail_illustration"
+                android:orientation="horizontal">
+
+
+                <ImageButton
+                    android:id="@+id/back"
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="22dp"
+                    android:background="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/back" />
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="540dp"
+                android:layout_marginTop="-72dp"
+                android:background="@drawable/cardbackground">
+
+
+                <ImageView
+                    android:id="@+id/foto_dokterdani"
+                    android:layout_width="115dp"
+                    android:layout_height="115dp"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginTop="28dp"
+                    android:src="@drawable/doctor1" />
+
+                <TextView
+                    android:id="@+id/dt_doctorname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_toRightOf="@id/foto_dokterdani"
+                    android:fontFamily="@font/varelaround"
+                    android:text="Dr. Dani Setiawan"
+                    android:textColor="@color/kTitleColor"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:id="@+id/dt_doctorspecialist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="65dp"
+                    android:layout_toRightOf="@id/foto_dokterdani"
+                    android:fontFamily="@font/varelaround"
+                    android:text="Hearth Sugeon - Flower Hospital"
+                    android:textColor="@color/kTitleColor"
+                    android:textSize="12dp" />
+
+                <ImageButton
+                    android:id="@+id/sendwaphone"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="94dp"
+                    android:layout_toRightOf="@id/foto_dokterdani"
+                    android:background="@drawable/doctor_call"
+                    android:src="@drawable/phone" />
+
+                <ImageButton
+                    android:id="@+id/sendwachat"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="62dp"
+                    android:layout_marginTop="94dp"
+                    android:layout_toRightOf="@id/foto_dokterdani"
+                    android:background="@drawable/doctor_chat"
+                    android:src="@drawable/chat" />
+
+                <ImageButton
+                    android:id="@+id/sendwavideo"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="112dp"
+                    android:layout_marginTop="94dp"
+                    android:layout_toRightOf="@id/foto_dokterdani"
+                    android:background="@drawable/doctor_video"
+                    android:src="@drawable/video" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="180dp"
+                    android:fontFamily="@font/varelaround"
+                    android:text="About Doctor"
+                    android:textColor="@color/kTitleColor"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dt_doctorabout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="218dp"
+                    android:fontFamily="@font/varelaround"
+                    android:lineSpacingExtra="6dp"
+                    android:text="Dr. Stella is the top most heart surgeon in Flower\nHospital. She has done over 100 successful sugeries\nwithin past 3 years. She has achieved several\nawards for her wonderful contribution in her own\nfield. She’s available for private consultation for\ngiven schedules."
+                    android:textColor="#B31E1C61"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="370dp"
+                    android:fontFamily="@font/varelaround"
+                    android:text="Upcoming Schedules"
+                    android:textColor="@color/kTitleColor"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="410dp"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/image_detail"
+                        android:layout_width="350dp"
+                        android:layout_height="90dp"
+                        android:background="@drawable/doctor" />
+
+                    <RelativeLayout
+                        android:id="@+id/foto_dokter2"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/doctor_date">
+
+                        <TextView
+                            android:id="@+id/dt_doctordate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/varelaround"
+                            android:text="31"
+                            android:textColor="@color/kBlueColor"
+                            android:textSize="24dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/dt_doctormonth"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="34dp"
+                            android:fontFamily="@font/varelaround"
+                            android:text="Jan"
+                            android:textColor="@color/kBlueColor"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_nama2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_toRightOf="@+id/foto_dokter2"
+                        android:fontFamily="@font/varelaround"
+                        android:text="Consultation"
+                        android:textColor="@color/kTitleColor"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dt_doctorfirsttime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_nama2"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_toRightOf="@+id/foto_dokter2"
+                        android:fontFamily="@font/varelaround"
+                        android:text="09.00 AM"
+                        android:textColor="#B31E1C61"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_nama2"
+                        android:layout_marginLeft="73dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_toRightOf="@+id/foto_dokter2"
+                        android:fontFamily="@font/varelaround"
+                        android:text="-"
+                        android:textColor="#B31E1C61"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/dt_doctorsecondtime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_nama2"
+                        android:layout_marginLeft="83dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_toRightOf="@+id/foto_dokter2"
+                        android:fontFamily="@font/varelaround"
+                        android:text="10.00 AM"
+                        android:textColor="#B31E1C61"
+                        android:textSize="12dp" />
+
+
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/dt_doctorphonenumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="160dp"
+                    android:text="Phone Number"
+                    android:textAlignment="center"
+                    android:visibility="gone" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
+

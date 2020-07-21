@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    android:layout_marginBottom="14dp">
+
+
+    <ImageButton
+        android:id="@+id/image_detail"
+        android:layout_width="350dp"
+        android:layout_height="90dp"
+        android:background="@drawable/doctor" />
+
+    <ImageView
+        android:id="@+id/foto_dokter"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/doctor1" />
+
+    <TextView
+        android:id="@+id/doctor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/foto_dokter"
+        android:fontFamily="@font/varelaround"
+        android:text="Dr. Dani Setiawan"
+        android:textColor="@color/kTitleColor"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/doctorspecialist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doctor_name"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@+id/foto_dokter"
+        android:fontFamily="@font/varelaround"
+        android:text="Hearth Surgeon - Flower Hospital"
+        android:textColor="@color/kTitleColor"
+        android:textSize="12dp" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/doctorphonenumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/doctormonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/doctordate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/doctorfirsttime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/doctorsecondtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/doctorabout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp" />
+
+
+</RelativeLayout>
+

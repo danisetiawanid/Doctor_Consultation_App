@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "713261631951",
+    "firebase_url": "https://mdanisetiawan4sc5.firebaseio.com",
+    "project_id": "mdanisetiawan4sc5",
+    "storage_bucket": "mdanisetiawan4sc5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713261631951:android:aabe8dcc2677381e3eaaba",
+        "android_client_info": {
+          "package_name": "com.dani.dokter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713261631951-rac98nf9b7rm300bmqs9tsjb4fhthpvd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo_2w8Msw3kOTYLP9Ud9e5yyNQYKzAvso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713261631951-rac98nf9b7rm300bmqs9tsjb4fhthpvd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
