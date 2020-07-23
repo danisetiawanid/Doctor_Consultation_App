@@ -1,11 +1,11 @@
 package com.dani.dokter.model;
 
 public class DataDokter {
-    String doctorname, doctorspecialist, doctorphonenumber,doctormonth,doctordate,doctorfirsttime,doctorsecondtime,doctorabout;
+    String doctorname, doctorspecialist, doctorphonenumber,doctormonth,doctordate,doctorfirsttime,doctorsecondtime,doctorabout, doctoraccount;
 
     public DataDokter(){}
 
-    public DataDokter(String doctorname, String doctorspecialist, String doctorphonenumber, String doctormonth, String doctordate, String doctorfirsttime, String doctorsecondtime, String doctorabout) {
+    public DataDokter(String doctorname, String doctorspecialist, String doctorphonenumber, String doctormonth, String doctordate, String doctorfirsttime, String doctorsecondtime, String doctorabout, String doctoraccount) {
         this.doctorname = doctorname;
         this.doctorspecialist = doctorspecialist;
         this.doctorphonenumber = doctorphonenumber;
@@ -14,6 +14,15 @@ public class DataDokter {
         this.doctorfirsttime = doctorfirsttime;
         this.doctorsecondtime = doctorsecondtime;
         this.doctorabout = doctorabout;
+        this.doctoraccount = doctoraccount;
+    }
+
+    public String getDoctoraccount() {
+        return doctoraccount;
+    }
+
+    public void setDoctoraccount(String doctoraccount) {
+        this.doctoraccount = doctoraccount;
     }
 
     public String getDoctorname() {

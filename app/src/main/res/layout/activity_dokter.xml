@@ -24,6 +24,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
+                    android:id="@+id/menudani"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -31,14 +32,17 @@
                     android:padding="28dp"
                     android:src="@drawable/menu" />
 
-                <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="14dp"
+                    android:id="@+id/profileimage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_alignParentRight="true"
                     android:layout_gravity="right|end"
-                    android:background="@null"
-                    android:padding="22dp"
-                    android:src="@drawable/profile" />
+                    android:src="@drawable/profile">
+                </de.hdodenhof.circleimageview.CircleImageView>
+
 
 
             </RelativeLayout>
@@ -56,47 +60,52 @@
                     android:layout_gravity="left"
                     android:fontFamily="@font/varelaround"
                     android:gravity="left"
-                    android:text="Find Your Desire \nDoctor"
+                    android:text="Find Your Desire \nSpecialist"
                     android:textColor="@color/kTitleColor"
                     android:textSize="32dp"
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <FrameLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginLeft="12dp"
-                >
+                android:layout_height="80dp">
 
 
                 <EditText
                     android:id="@+id/searchdani"
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="46dp"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center_horizontal|left"
+                    android:layout_marginStart="24dp"
                     android:layout_marginTop="16dp"
                     android:background="@drawable/searchbackground"
                     android:fontFamily="@font/varelaround"
                     android:hint="Search for Specialist"
                     android:inputType="text|textNoSuggestions"
-                    android:paddingLeft="32dp" />
+                    android:paddingLeft="32dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
-                    android:layout_width="match_parent"
+                    android:id="@+id/caridani"
+                    android:layout_width="92dp"
                     android:layout_height="54dp"
-                    android:layout_gravity="right"
-                    android:layout_marginLeft="280dp"
+                    android:layout_gravity="right|center_horizontal"
+                    android:layout_marginStart="220dp"
                     android:layout_marginTop="12dp"
-                    android:layout_marginRight="34dp"
+                    android:layout_marginEnd="24dp"
                     android:background="@drawable/imagesearch"
-                    android:src="@drawable/search" />
-            </FrameLayout>
+                    android:src="@drawable/search"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.513"
+                    app:layout_constraintStart_toStartOf="@+id/searchdani"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
-                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="-16dp"
                 android:orientation="horizontal">
 
@@ -253,9 +262,9 @@
             </RelativeLayout>
 
             <LinearLayout
-                android:layout_marginTop="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -269,10 +278,10 @@
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:layout_gravity="center"
                     android:id="@+id/list_doctor"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_gravity="center"
                     android:layout_marginTop="12dp">
 
                 </androidx.recyclerview.widget.RecyclerView>

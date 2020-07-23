@@ -46,6 +46,7 @@ public class DokterAdapter extends RecyclerView.Adapter<DokterAdapter.MyViewHold
         holder.vdoctorsecondtime.setText(dataDokters.get(position).getDoctorsecondtime());
         holder.vdoctorabout.setText(dataDokters.get(position).getDoctorabout());
 
+
         holder.imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +60,7 @@ public class DokterAdapter extends RecyclerView.Adapter<DokterAdapter.MyViewHold
                 detail.putExtra("DOCTOR_FIRSTTIME", dataDokters.get(position).getDoctorfirsttime());
                 detail.putExtra("DOCTOR_SECONDTIME", dataDokters.get(position).getDoctorsecondtime());
                 detail.putExtra("DOCTOR_ABOUT", dataDokters.get(position).getDoctorabout());
+
                 context.startActivity(detail);
             }
         });
@@ -87,6 +89,8 @@ public class DokterAdapter extends RecyclerView.Adapter<DokterAdapter.MyViewHold
             vdoctorsecondtime = itemView.findViewById(R.id.doctorsecondtime);
             vdoctorabout = itemView.findViewById(R.id.doctorabout);
             imageButton = itemView.findViewById(R.id.image_detail);
+
+
             foto = itemView.findViewById(R.id.foto_dokter);
         }
     }

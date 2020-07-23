@@ -12,12 +12,16 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+
 public class DetailDokter extends AppCompatActivity {
 
     TextView vdoctorname, vdoctorspecialist,  vdoctormonth,vdoctordate,vdoctorfirsttime,vdoctorsecondtime,vdoctorabout;
-    EditText vdoctorphonenumber;
+    EditText vdoctorphonenumber, vdoctoraccount;
     ImageButton imageButtonback, waphone, wachat, wavideo;
-    String doctorname, doctorspecialist,doctorphonenumber,doctormonth,doctordate,doctorfirsttime,doctorsecondtime,doctorabout ;
+    String doctorname, doctorspecialist,doctorphonenumber,doctormonth,doctordate,doctorfirsttime,doctorsecondtime,doctorabout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,7 @@ public class DetailDokter extends AppCompatActivity {
         vdoctorfirsttime = findViewById(R.id.dt_doctorfirsttime);
         vdoctorsecondtime = findViewById(R.id.dt_doctorsecondtime);
         vdoctorabout = findViewById(R.id.dt_doctorabout);
+        vdoctoraccount = findViewById(R.id.dt_doctoraccount);
 
 
         waphone = findViewById(R.id.sendwaphone);
@@ -56,7 +61,7 @@ public class DetailDokter extends AppCompatActivity {
 
                 if (installed) {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + "62+" + doctorspecialist + "&text=halo"));
+                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + "62+" + doctorphonenumber + "&text=Hello " + doctorname+".\nYour profile match with my problem My Name Is " + vdoctoraccount.getText().toString()+ "i had a problem. Can you diagnose what kind of what illness I have? Thank You and I waiting for your answer :)"));
                     startActivity(intent);
                 } else {
                     Toast.makeText(DetailDokter.this, "Whatsapp Not Installed", Toast.LENGTH_SHORT).show();
@@ -73,7 +78,7 @@ public class DetailDokter extends AppCompatActivity {
 
                 if (installed) {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + "62+" + doctorphonenumber + "&text=halo"));
+                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + "62+" + doctorphonenumber + "&text=Hello " + doctorname+".\nYour profile match with my problem My Name Is " + vdoctoraccount.getText().toString()+ "i had a problem. Can you diagnose what kind of what illness I have? Thank You and I waiting for your answer :)"));
                     startActivity(intent);
                 } else {
                     Toast.makeText(DetailDokter.this, " Whatsapp Not Installed", Toast.LENGTH_SHORT).show();
@@ -90,7 +95,7 @@ public class DetailDokter extends AppCompatActivity {
 
                 if (installed) {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + "62+" + doctorphonenumber + "&text=halo"));
+                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + "62+" + doctorphonenumber + "&text=Hello " + doctorname+".\nYour profile match with my problem My Name Is " + vdoctoraccount.getText().toString()+ "i had a problem. Can you diagnose what kind of what illness I have? Thank You and I waiting for your answer :)"));
                     startActivity(intent);
                 } else {
                     Toast.makeText(DetailDokter.this, "Whatsapp Not Installed", Toast.LENGTH_SHORT).show();
@@ -109,6 +114,13 @@ public class DetailDokter extends AppCompatActivity {
         doctorabout = getIntent().getStringExtra("DOCTOR_ABOUT");
 
 
+
+        GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(this);
+        if (signInAccount != null) {
+            vdoctoraccount.setText(signInAccount.getDisplayName());
+
+        }
+
         vdoctorname.setText(doctorname);
         vdoctorspecialist.setText(doctorspecialist);
         vdoctorphonenumber.setText(doctorphonenumber);
@@ -117,6 +129,7 @@ public class DetailDokter extends AppCompatActivity {
         vdoctorfirsttime.setText(doctorfirsttime);
         vdoctorsecondtime.setText(doctorsecondtime);
         vdoctorabout.setText(doctorabout);
+
     }
 
     private boolean appInstalledOrNot(String url) {

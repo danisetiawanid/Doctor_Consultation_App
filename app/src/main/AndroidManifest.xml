@@ -9,12 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailDokter" android:theme="@style/AppTheme2"></activity>
-        <activity android:name=".Dokter"
-            android:windowSoftInputMode="stateHidden">
+        <activity
+            android:name=".Dokter"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation = "portrait"/>
+        <activity
+            android:name=".DetailDokter"
+            android:theme="@style/AppTheme2"
+            android:screenOrientation = "portrait"/>
+        <activity android:name=".Login"
+            android:screenOrientation = "portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
