@@ -1,5 +1,6 @@
 package com.dani.dokter.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -20,8 +21,8 @@ import java.util.ArrayList;
 
 public class DokterAdapter extends RecyclerView.Adapter<DokterAdapter.MyViewHolder> {
 
-    private Context context;
-    private ArrayList<DataDokter> dataDokters;
+    private final Context context;
+    private final ArrayList<DataDokter> dataDokters;
 
     public DokterAdapter(Context cont, ArrayList<DataDokter> data){
         context=cont;
@@ -36,7 +37,7 @@ public class DokterAdapter extends RecyclerView.Adapter<DokterAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.vdoctorname.setText(dataDokters.get(position).getDoctorname());
         holder.vdoctorspecialist.setText(dataDokters.get(position).getDoctorspecialist());
         holder.vdoctorphonenumber.setText(dataDokters.get(position).getDoctorphonenumber());
@@ -47,22 +48,19 @@ public class DokterAdapter extends RecyclerView.Adapter<DokterAdapter.MyViewHold
         holder.vdoctorabout.setText(dataDokters.get(position).getDoctorabout());
 
 
-        holder.imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent detail = new Intent(context.getApplicationContext(), DetailDokter.class);
-                detail.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                detail.putExtra("DOCTOR_NAME", dataDokters.get(position).getDoctorname());
-                detail.putExtra("DOCTOR_SPECIALIST", dataDokters.get(position).getDoctorspecialist());
-                detail.putExtra("DOCTOR_PHONENUMBER", dataDokters.get(position).getDoctorphonenumber());
-                detail.putExtra("DOCTOR_MONTH", dataDokters.get(position).getDoctormonth());
-                detail.putExtra("DOCTOR_DATE", dataDokters.get(position).getDoctordate());
-                detail.putExtra("DOCTOR_FIRSTTIME", dataDokters.get(position).getDoctorfirsttime());
-                detail.putExtra("DOCTOR_SECONDTIME", dataDokters.get(position).getDoctorsecondtime());
-                detail.putExtra("DOCTOR_ABOUT", dataDokters.get(position).getDoctorabout());
+        holder.imageButton.setOnClickListener(view -> {
+            Intent detail = new Intent(context.getApplicationContext(), DetailDokter.class);
+            detail.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            detail.putExtra("DOCTOR_NAME", dataDokters.get(position).getDoctorname());
+            detail.putExtra("DOCTOR_SPECIALIST", dataDokters.get(position).getDoctorspecialist());
+            detail.putExtra("DOCTOR_PHONENUMBER", dataDokters.get(position).getDoctorphonenumber());
+            detail.putExtra("DOCTOR_MONTH", dataDokters.get(position).getDoctormonth());
+            detail.putExtra("DOCTOR_DATE", dataDokters.get(position).getDoctordate());
+            detail.putExtra("DOCTOR_FIRSTTIME", dataDokters.get(position).getDoctorfirsttime());
+            detail.putExtra("DOCTOR_SECONDTIME", dataDokters.get(position).getDoctorsecondtime());
+            detail.putExtra("DOCTOR_ABOUT", dataDokters.get(position).getDoctorabout());
 
-                context.startActivity(detail);
-            }
+            context.startActivity(detail);
         });
 
     }
@@ -73,7 +71,7 @@ public class DokterAdapter extends RecyclerView.Adapter<DokterAdapter.MyViewHold
     }
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView vdoctorname, vdoctorspecialist, vdoctorphonenumber, vdoctormonth,vdoctordate,vdoctorfirsttime,vdoctorsecondtime,vdoctorabout;
         ImageButton imageButton;
 

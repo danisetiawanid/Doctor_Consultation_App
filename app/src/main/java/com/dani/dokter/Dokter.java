@@ -6,16 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.DialogInterface;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -45,7 +43,6 @@ public class Dokter extends AppCompatActivity {
     DokterAdapter adapter;
 
     private RecyclerView mRecylcer;
-    private LinearLayoutManager mManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,29 +62,11 @@ public class Dokter extends AppCompatActivity {
             Glide.with(getApplicationContext()).load(signInAccount.getPhotoUrl()).into(profileaccountda);
         }
 
-        caridani.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Dokter.this, "Plese see the doctor :)", Toast.LENGTH_SHORT).show();
-            }
-        });
+        caridani.setOnClickListener(v -> Toast.makeText(Dokter.this, "Plese see the doctor :)", Toast.LENGTH_SHORT).show());
 
-        menudan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Dokter.this, "Coming Soon :)", Toast.LENGTH_SHORT).show();
-            }
-        });
+        menudan.setOnClickListener(v -> Toast.makeText(Dokter.this, "Coming Soon :)", Toast.LENGTH_SHORT).show());
 
-        profileaccountda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-               opendialog(v);
-
-
-            }
-        });
+        profileaccountda.setOnClickListener(this::opendialog);
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -114,7 +93,7 @@ public class Dokter extends AppCompatActivity {
         mRecylcer.setHasFixedSize(true);
 
 
-        mManager = new LinearLayoutManager(this);
+        LinearLayoutManager mManager = new LinearLayoutManager(this);
         mManager.setReverseLayout(true);
         mManager.setStackFromEnd(true);
         mRecylcer.setLayoutManager(mManager);
@@ -144,20 +123,14 @@ public class Dokter extends AppCompatActivity {
     public void opendialog(View view) {
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
         alertBuilder.setMessage("Are you sure logout this account ?");
-        alertBuilder.setPositiveButton("LOGOUT", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface arg0, int arg1) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), Login.class);
-                startActivity(intent);
-                Toast.makeText(getApplicationContext(), "Logout Successful", Toast.LENGTH_SHORT).show();
-            }
+        alertBuilder.setPositiveButton("LOGOUT", (arg0, arg1) -> {
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(getApplicationContext(), Login.class);
+            startActivity(intent);
+            Toast.makeText(getApplicationContext(), "Logout Successful", Toast.LENGTH_SHORT).show();
         });
-        alertBuilder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+        alertBuilder.setNegativeButton("NO", (dialog, which) -> {
 
-            }
         });
 
         AlertDialog alertDialog = alertBuilder.create();
@@ -168,6 +141,7 @@ public class Dokter extends AppCompatActivity {
     private void search(String text) {
         Query query = reference.orderByChild("doctorspecialist").startAt(text).endAt(text + "\uf8ff");
         query.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {

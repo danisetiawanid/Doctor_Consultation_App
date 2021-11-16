@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
+
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -44,62 +44,50 @@ public class DetailDokter extends AppCompatActivity {
         wachat = findViewById(R.id.sendwachat);
         wavideo = findViewById(R.id.sendwavideo);
 
-        imageButtonback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DetailDokter.this, Dokter.class);
+        imageButtonback.setOnClickListener(v -> {
+            Intent intent = new Intent(DetailDokter.this, Dokter.class);
+            startActivity(intent);
+        });
+
+        waphone.setOnClickListener(v -> {
+
+
+            boolean installed = appInstalledOrNot();
+
+            if (installed) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + "62+" + doctorphonenumber + "&text=Hello " + doctorname+".\nYour profile match with my problem My Name Is " + vdoctoraccount.getText().toString()+ "i had a problem. Can you diagnose what kind of what illness I have? Thank You and I waiting for your answer :)"));
                 startActivity(intent);
+            } else {
+                Toast.makeText(DetailDokter.this, "Whatsapp Not Installed", Toast.LENGTH_SHORT).show();
             }
         });
 
-        waphone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        wachat.setOnClickListener(v -> {
 
 
-                boolean installed = appInstalledOrNot("com.whatsapp");
+            boolean installed = appInstalledOrNot();
 
-                if (installed) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + "62+" + doctorphonenumber + "&text=Hello " + doctorname+".\nYour profile match with my problem My Name Is " + vdoctoraccount.getText().toString()+ "i had a problem. Can you diagnose what kind of what illness I have? Thank You and I waiting for your answer :)"));
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(DetailDokter.this, "Whatsapp Not Installed", Toast.LENGTH_SHORT).show();
-                }
+            if (installed) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + "62+" + doctorphonenumber + "&text=Hello " + doctorname+".\nYour profile match with my problem My Name Is " + vdoctoraccount.getText().toString()+ "i had a problem. Can you diagnose what kind of what illness I have? Thank You and I waiting for your answer :)"));
+                startActivity(intent);
+            } else {
+                Toast.makeText(DetailDokter.this, " Whatsapp Not Installed", Toast.LENGTH_SHORT).show();
             }
         });
 
-        wachat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        wavideo.setOnClickListener(v -> {
 
 
-                boolean installed = appInstalledOrNot("com.whatsapp");
+            boolean installed = appInstalledOrNot();
 
-                if (installed) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + "62+" + doctorphonenumber + "&text=Hello " + doctorname+".\nYour profile match with my problem My Name Is " + vdoctoraccount.getText().toString()+ "i had a problem. Can you diagnose what kind of what illness I have? Thank You and I waiting for your answer :)"));
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(DetailDokter.this, " Whatsapp Not Installed", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        wavideo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                boolean installed = appInstalledOrNot("com.whatsapp");
-
-                if (installed) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + "62+" + doctorphonenumber + "&text=Hello " + doctorname+".\nYour profile match with my problem My Name Is " + vdoctoraccount.getText().toString()+ "i had a problem. Can you diagnose what kind of what illness I have? Thank You and I waiting for your answer :)"));
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(DetailDokter.this, "Whatsapp Not Installed", Toast.LENGTH_SHORT).show();
-                }
+            if (installed) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=" + "62+" + doctorphonenumber + "&text=Hello " + doctorname+".\nYour profile match with my problem My Name Is " + vdoctoraccount.getText().toString()+ " I had a problem. Can you diagnose what kind of what illness I have? Thank You and I waiting for your answer :)"));
+                startActivity(intent);
+            } else {
+                Toast.makeText(DetailDokter.this, "Whatsapp Not Installed", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -132,11 +120,11 @@ public class DetailDokter extends AppCompatActivity {
 
     }
 
-    private boolean appInstalledOrNot(String url) {
+    private boolean appInstalledOrNot() {
         PackageManager packageManager = getPackageManager();
         boolean app_installed;
         try {
-            packageManager.getPackageInfo(url, PackageManager.GET_ACTIVITIES);
+            packageManager.getPackageInfo("com.whatsapp", PackageManager.GET_ACTIVITIES);
             app_installed = true;
         } catch (PackageManager.NameNotFoundException e) {
             app_installed = false;
